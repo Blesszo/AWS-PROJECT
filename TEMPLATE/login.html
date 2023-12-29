@@ -1,0 +1,32 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'stl.css' %}" rel="stylesheet">
+    <title>Christ-technelogos</title>
+</head>
+<body>
+    {% for message in messages %}
+    <h2>{{message}}</h2>
+    {% endfor %}
+
+<h1>LOGIN</h1>
+
+<div>
+  <form action="login" method="POST">
+    {% csrf_token %}
+    <label for="fname">USERNAME</label>
+    <input type="text" id="fname" name="username" placeholder="Your username..">
+
+    <label for="lname">PASSWORD</label>
+    <input type="password" id="lname" name="password" placeholder="Your password..">
+
+    <input type="submit" value="LOGIN">
+    <p>Don't have  and account? <a href="register">Signup</a></p>
+  </form>
+</div>
+</body>
+</html>

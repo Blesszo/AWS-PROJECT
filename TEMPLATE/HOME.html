@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION PAGE</title>
+    <link rel="stylesheet" href="{% static 'CSS.css' %}">
+</head>
+<body>
+     {% if user.is_authenticated %}
+     <h2>HELLO  {{user.username}} WELLCOM TO CHRIST-TECHNELOGOS</h2>
+     {% else %}
+     <h2>WELCOME TO OUR SITE</h2>
+     {% endif %}
+    <h1>ENTER SOME WORDS</h1>
+    <form action="counter" method="post">
+        {% csrf_token %}
+    <textarea name="text" id="" cols="30" rows="10"></textarea> <br>
+    <input type="submit">
+    </form>
+</body>
+</html>

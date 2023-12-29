@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CHRIST-TECHNELOGOS</title>
+    <link rel="stylesheet" href="{% static 'stl.css' %}">
+
+    <style>
+
+    </style>
+</head>
+<body>
+{% for message in messages %}
+<h2>{{message}}</h2>
+{% endfor %}
+<h1>SIGNUP NOW</h1>
+
+<div>
+  <form action="register" method="POST">
+     
+  
+    {% csrf_token %}
+
+    <label for="fsname">FIRSTNAME</label>
+    <input type="text" id="fsname" name="firstname" placeholder="Your name..">
+
+    <label for="lsname">LASTNAME</label>
+    <input type="text" id="lsname" name="lastname" placeholder="Your name..">
+
+    <label for="fname">USERNAME</label>
+    <input type="text" id="fname" name="username" placeholder="Your name..">
+
+    <label for="lname">EMAIL</label>
+    <input type="email" id="lname" name="email" placeholder="Your email..">
+
+    <label for="pname">PASSWORD</label>
+    <input type="password" id="pname" name="password" placeholder="Your password..">
+
+    <label for="cpname">COMFIRM PASSWORD</label>
+    <input type="password" id="cpname" name="password2" placeholder="comfirm password..">
+
+    <label for="country">COUNTYU</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+      <option value="australia">nigera</option>
+      <option value="canada">Germany</option>
+      <option value="usa">UK</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">cameroon</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+    <p>Already Have An Account? <a href="login">SignIn</a></p>
+  </form>
+</div>
+
+</body>
+
+</html>
